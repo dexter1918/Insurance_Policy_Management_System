@@ -102,13 +102,13 @@
                 }
             }
             function validateForm1() {
-                var x = document.forms["myform"]["email_address"].value;
-                var y = document.forms["myform"]["password"].value;
-                if (x === "") {
+                var email_address = document.forms["myform"]["email_address"].value;
+                var password = document.forms["myform"]["password"].value;
+                if (email_address === "") {
                     alert("Company Email must be entered");
                     return false;
                 }
-                else if (y === ""){
+                else if (password === ""){
                     alert("Password must be entered");
                     return false;                    
                 }
