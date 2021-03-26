@@ -122,8 +122,11 @@
                 <thead id="myTableHeader" style="background-color: #6c7ae0; color: white;">
                     <tr>
                         <th>Company ID</th>
+                        <th>Company Name</th>
                         <th>Customer ID</th>
+                        <th>Customer Name</th>
                         <th>Policy ID</th>
+                        <th>Policy Name</th>
                     </tr>
                 </thead>
                 <tbody id="myTableBody">
@@ -131,21 +134,19 @@
                         try {
                             Connection connection = connectionProvidertoDb.getConnectionObject().getConnection("E:\\ExavaluProject\\WebApplication1\\config\\dbParams.properties");
                             int i = (int) request.getSession().getAttribute("companyId");
-//                            PreparedStatement pstmt = connection.prepareStatement(
-//                                    "select companyname,cutomer_name,pname,policyissue.customer_id,policy.pid from company,customer,policy,policyissue where company.company_id=policyissue.company_id and policy.company_id=policyissue.company_id and customer.customer_id=policyissue.customer_id and policy.pid=policyissue.pid and  policyissue.company_id=?");
-                            
-//                            PreparedStatement pstmt = connection.prepareStatement("select distinct *  from policyissue, companylogin, customer, policy where policyissue.customer_id = customer.customer_id and policyissue.company_id = ? and policyissue.pid = policy.pid");
-                            PreparedStatement pstmt = connection.prepareStatement("select company_id, customer_id, pid from policyissue where company_id = ?;");
+//                            PreparedStatement pstmt = connection.prepareStatement("select company_id, customer_id, pid from policyissue where company_id = ?;");
+                            PreparedStatement pstmt = connection.prepareStatement("select * from (select policyissue.company_id, companylogin.companyname, policyissue.customer_id, customer.cutomer_name, policy.pid, policy.pname from policyissue inner join customer inner join policy inner join companylogin where policyissue.customer_id = customer.customer_id and policyissue.pid = policy.pid and policyissue.company_id = companylogin.company_id) as t where t.company_id=?");
                             pstmt.setInt(1, i);
                             ResultSet rs = pstmt.executeQuery();
                             while (rs.next()) {
                     %>
-
-
                     <tr style="color: gray; background-color: white">
                         <td><%=rs.getString("company_id")%></td>
-                        <td><%=rs.getString("customer_id")%></td> 
+                        <td><%=rs.getString("companyname")%></td> 
+                        <td><%=rs.getString("customer_id")%></td>
+                        <td><%=rs.getString("cutomer_name")%></td>
                         <td><%=rs.getString("pid")%></td>
+                        <td><%=rs.getString("pname")%></td>
                     </tr>
                     <%
                             }

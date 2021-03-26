@@ -16,13 +16,14 @@
         }
 
         .btn-group button {
-            background-color: #5995fd; /* Green background */
+            background-color: white; 
             border: 1px; /* Green border */
-            color: white; /* White text */
+            color: #5995fd; /* White text */
             padding: 10px 24px; /* Some padding */
             cursor: pointer; /* Pointer/hand icon */
             float: left; /* Float the buttons side by side */
             margin-right: 7px;
+            border-radius: 5px; 
         }
 
         /* Clear floats (clearfix hack) */
@@ -41,7 +42,8 @@
             background-color: #3e8e41;
         }
     </style>
-    <body>
+    <body  style="background-image: url(images/bannerBlurred.jpg)">
+        <!--<h2 style="color: white; margin-left: 9%;">List of Companies...</h2>-->
         <div class="abc">
             <div class="btn-group">
                 <button onclick="location.href = 'AdminCompany.jsp';">Companies</button>
