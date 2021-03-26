@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+		background-image: url(../../images/bannerBlurred.jpg);
+		-webkit-background-size: cover;
+    overflow: hidden;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+body a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.list-group-item {
+    background-color: transparent;
+}
+
+/*-- bottom-to-top --*/
+#toTop {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 24px;
+    right: 3%;
+    overflow: hidden;
+    z-index: 999;
+    width: 32px;
+    height: 32px;
+    border: none;
+    text-indent: 100%;
+    background: url(../images/move-top.png) no-repeat 0px 0px;
+}
+
+#toTopHover {
+    width: 32px;
+    height: 32px;
+    display: block;
+    overflow: hidden;
+    float: right;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+/*-- //bottom-to-top --*/
+/* header */
+header h1,
+footer h2 {
+    line-height: 0;
+}
+
+.navbar-light {
+    padding: 0.4em 5em;
+    position: absolute;
+    z-index: 999;
+    width: 80%;
+    left: 10%;
+    top: 4%;
+    background: #0093d0;
+    border-radius: 70px;
+}
+
+a.navbar-brand {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+}
+
+a.navbar-brand i {
+    color: rgba(0, 0, 0, 0.18);
+    font-size: 2em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+    padding: 4px 15px;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+ul.navbar-nav.ml-lg-auto.text-center {
+    margin-top: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #0093d0;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item,
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: white;
+    color: #000 !important;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.w3ls-btn {
+    font-weight: 600;
+    background: transparent;
+    padding: 4px 15px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.w3ls-btn i {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+
+/*-- //header --*/
